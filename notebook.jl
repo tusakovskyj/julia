@@ -19,8 +19,25 @@ end
 # ╔═╡ e9417330-246a-11f1-b52d-3fe80e2f1c9d
 using PlutoUI, Dates, HypertextLiteral
 
+# ╔═╡ b5318299-3421-4daa-aad3-37330dc947a7
+@htl("""
+    <div>
+		$(HTML_MAIN)
+    </div>
+""")
+
 # ╔═╡ c293c1a1-ed64-4a95-ac8e-2477c9e210b2
 @htl("""<script src="https://cdn.tailwindcss.com"></script>""")
+
+# ╔═╡ 98e680cd-b980-4a0c-bbf2-668c06288798
+HTML_MAIN = @htl("""
+    <div>
+        <h1>Welcome</h1>
+        <p>Julia is a very promising programming language. Just look at this - I have just added my first button!</p>
+        $(MyButton("Click Me", color="black", padding="5px"))
+		$(TextContent("Hello World!"))
+    </div>
+""");
 
 # ╔═╡ 31c52bbf-0941-498f-982b-d91576c93662
 function MyButton(label; color="blue", padding="10px")
@@ -65,23 +82,6 @@ function TextContent(content)
 				<p class="font-bold mt-4">$(content)</p>
 				""")
 end
-
-# ╔═╡ 98e680cd-b980-4a0c-bbf2-668c06288798
-HTML_MAIN = @htl("""
-    <div>
-        <h1>Welcome</h1>
-        <p>Julia is a very promising programming language. Just look at this - I have just added my first button!</p>
-        $(MyButton("Click Me", color="black", padding="5px"))
-		$(TextContent("Hello World!"))
-    </div>
-""");
-
-# ╔═╡ b5318299-3421-4daa-aad3-37330dc947a7
-@htl("""
-    <div>
-		$(HTML_MAIN)
-    </div>
-""")
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
